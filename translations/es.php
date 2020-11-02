@@ -1,0 +1,34 @@
+<?php
+
+global $_MODULE;
+$_MODULE = array();
+$_MODULE ['<{clearcachecrontask}prestashop>clearcachecrontask_db9a75d46c37ed60dc12512da39ae499'] = 'Limpiar la caché Cron Tarea programada';
+$_MODULE ['<{clearcachecrontask}prestashop>clearcachecrontask_0b38aa82001c1179e45c73edaeb7883c'] = 'Tarea automática para borrar la caché de prestashop';
+$_MODULE ['<{clearcachecrontask}prestashop>clearcachecrontask_19ac55275bd7942e73e32b0a157ae979'] = '¿Está seguro de desinstalar este módulo?';
+$_MODULE ['<{clearcachecrontask}prestashop>clearcachecrontask_9f3a9b8720c8566caee5adffb9ca5bbe'] = 'La configuración se ha actualizado.';
+$_MODULE ['<{clearcachecrontask}prestashop>clearcachecrontask_f4f70727dc34561dfde1a3c529b6205c'] = 'Configuración';
+$_MODULE ['<{clearcachecrontask}prestashop>clearcachecrontask_7a7bb8c834317c30d67210811a8af8d5'] = 'Índice de módulo de bloque de navegación en capas reconstruido';
+$_MODULE ['<{clearcachecrontask}prestashop>clearcachecrontask_53a29bd8ffd7c25f473683cc251998f2'] = 'Índice del módulo de búsqueda por facetas reconstruido';
+$_MODULE ['<{clearcachecrontask}prestashop>clearcachecrontask_00d23a76e43b46dae9ec7aa9dcbebb32'] = 'Habilitado';
+$_MODULE ['<{clearcachecrontask}prestashop>clearcachecrontask_b9f5c797ebbf55adccdd8539a65a0241'] = 'Deshabilitado';
+$_MODULE ['<{clearcachecrontask}prestashop>clearcachecrontask_f82dfe8b050f799b9215f50b8c285895'] = 'Índice de precios del módulo del bloque de navegación en capas reconstruido';
+$_MODULE ['<{clearcachecrontask}prestashop>clearcachecrontask_a9fa4a5d444d0675b568fb8fecf80dce'] = 'Índice de precios del módulo de búsqueda por facetas reconstruido';
+$_MODULE ['<{clearcachecrontask}prestashop>clearcachecrontask_c9cc8cce247e49bae79f15173ce97354'] = 'Guardar';
+$_MODULE ['<{clearcachecrontask}prestashop>clearcachecrontask_baf1271dddb3e00462ddae4e231dfd75'] = 'Limpiar la caché de Symfony';
+$_MODULE ['<{clearcachecrontask}prestashop>clearcachecrontask_0f39e6b532e3ae144a9fa77a9ef4d082'] = 'Borrar caché de Smarty';
+$_MODULE ['<{clearcachecrontask}prestashop>clearcachecrontask_6c241f2a323b1152e0859331158755f8'] = 'Borrar caché XML';
+$_MODULE ['<{clearcachecrontask}prestashop>clearcachecrontask_038647fc2827daefd2cec985c876c9bd'] = 'Borrar caché de medios';
+$_MODULE ['<{clearcachecrontask}prestashop>clearcachecrontask_233ba919dfb9eb1a17997afefa728d4f'] = 'Generar índice';
+$_MODULE ['<{clearcachecrontask}prestashop>clearcachecrontask_bfc68640cedabf560a3a10db889da0b5'] = 'Índice de atributos de bloques en capas';
+$_MODULE ['<{clearcachecrontask}prestashop>clearcachecrontask_cdf90c7882b9d13ca610ca483d5e308f'] = 'Bloquear índice de URL en capas';
+$_MODULE ['<{clearcachecrontask}prestashop>clearcachecrontask_c16b64463a239e4573e0d3d0eaf2cff5'] = 'Índice de atributos de búsqueda por facetas';
+$_MODULE ['<{clearcachecrontask}prestashop>clearcachecrontask_d6f0e2961641d851cb4d1f1a0b38e276'] = 'Índice de precios completos en capas de bloques';
+$_MODULE ['<{clearcachecrontask}prestashop>clearcachecrontask_b073e9fa72fdbef2b2c93724e1f8ea56'] = 'Índice de precios completo de búsqueda por facetas';
+$_MODULE ['<{clearcachecrontask}prestashop>clearcachecrontask_fc51172c02456ea59d0c7feb6961856d'] = '¡Listo!';
+$_MODULE ['<{clearcachecrontask}prestashop>support_db5eb84117d06047c97c9a0191b5fffe'] = 'Soporte';
+$_MODULE ['<{clearcachecrontask}prestashop>support_8b378b32651e8ddb6f19a9cb8dad9456'] = 'Si tiene alguna pregunta o informe de error, o sugerencias para mejorar mi módulo, contácteme:';
+$_MODULE ['<{clearcachecrontask}prestashop>support_bebb41e5e32c868f1eb0e4439a2d3ee9'] = 'Haré todo lo posible para ayudarte con tu módulo.';
+$_MODULE ['<{clearcachecrontask}prestashop>support_a54c7aca1ea696b1c162c7f5b67313b3'] = 'Si encuentra que este módulo es útil, deje una calificación en Prestashop Addons :)';
+$_MODULE ['<{clearcachecrontask}prestashop>configure_db9a75d46c37ed60dc12512da39ae499'] = 'Tarea de limpieza cron de caché programada';
+$_MODULE ['<{clearcachecrontask}prestashop>configure_9e7ed9e232072cfb4e07733dad9af2b3'] = '¿Cómo se usa?';
+$_MODULE ['<{clearcachecrontask}prestashop>configure_cd946818af0333f16cf16cb9be16b73d'] = 'Solo tiene que configurar su administrador de tareas cron (complemento de prestashop como \ "Administrador de tareas Cron \", o directamente en la configuración de su servidor) para llamar a la siguiente URL, en la frecuencia de su elección: ';

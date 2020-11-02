@@ -1,0 +1,34 @@
+<?php
+
+global $_MODULE;
+$_MODULE = array();
+$_MODULE ['<{clearcachecrontask}prestashop>clearcachecrontask_db9a75d46c37ed60dc12512da39ae499'] = 'Clear Cache Cron Task Scheduled';
+$_MODULE ['<{clearcachecrontask}prestashop>clearcachecrontask_0b38aa82001c1179e45c73edaeb7883c'] = 'Automatische Aufgabe zum Löschen Ihres Prestashop-Cache';
+$_MODULE ['<{clearcachecrontask}prestashop>clearcachecrontask_19ac55275bd7942e73e32b0a157ae979'] = 'Sind Sie sicher, dieses Modul zu deinstallieren?';
+$_MODULE ['<{clearcachecrontask}prestashop>clearcachecrontask_9f3a9b8720c8566caee5adffb9ca5bbe'] = 'Einstellungen wurden aktualisiert.';
+$_MODULE ['<{clearcachecrontask}prestashop>clearcachecrontask_f4f70727dc34561dfde1a3c529b6205c'] = 'Einstellungen';
+$_MODULE ['<{clearcachecrontask}prestashop>clearcachecrontask_7a7bb8c834317c30d67210811a8af8d5'] = 'Index des Layered Navigation Block-Moduls neu erstellt';
+$_MODULE ['<{clearcachecrontask}prestashop>clearcachecrontask_53a29bd8ffd7c25f473683cc251998f2'] = 'Index des Facettierten Suchmoduls neu erstellt';
+$_MODULE ['<{clearcachecrontask}prestashop>clearcachecrontask_00d23a76e43b46dae9ec7aa9dcbebb32'] = 'Enabled';
+$_MODULE ['<{clearcachecrontask}prestashop>clearcachecrontask_b9f5c797ebbf55adccdd8539a65a0241'] = 'Disabled';
+$_MODULE ['<{clearcachecrontask}prestashop>clearcachecrontask_f82dfe8b050f799b9215f50b8c285895'] = 'Preisindex für Layered Navigation Block-Module neu erstellt';
+$_MODULE ['<{clearcachecrontask}prestashop>clearcachecrontask_a9fa4a5d444d0675b568fb8fecf80dce'] = 'Preisindex für facettierte Suchmodule neu erstellt';
+$_MODULE ['<{clearcachecrontask}prestashop>clearcachecrontask_c9cc8cce247e49bae79f15173ce97354'] = 'Save';
+$_MODULE ['<{clearcachecrontask}prestashop>clearcachecrontask_baf1271dddb3e00462ddae4e231dfd75'] = 'Symfony-Cache löschen';
+$_MODULE ['<{clearcachecrontask}prestashop>clearcachecrontask_0f39e6b532e3ae144a9fa77a9ef4d082'] = 'Smarty Cache löschen';
+$_MODULE ['<{clearcachecrontask}prestashop>clearcachecrontask_6c241f2a323b1152e0859331158755f8'] = 'XML-Cache löschen';
+$_MODULE ['<{clearcachecrontask}prestashop>clearcachecrontask_038647fc2827daefd2cec985c876c9bd'] = 'Media Cache löschen';
+$_MODULE ['<{clearcachecrontask}prestashop>clearcachecrontask_233ba919dfb9eb1a17997afefa728d4f'] = 'Index generieren';
+$_MODULE ['<{clearcachecrontask}prestashop>clearcachecrontask_bfc68640cedabf560a3a10db889da0b5'] = 'Block Layered Attribute Index';
+$_MODULE ['<{clearcachecrontask}prestashop>clearcachecrontask_cdf90c7882b9d13ca610ca483d5e308f'] = 'Block Layered URLs index';
+$_MODULE ['<{clearcachecrontask}prestashop>clearcachecrontask_c16b64463a239e4573e0d3d0eaf2cff5'] = 'Index der Facettierten Suchattribute';
+$_MODULE ['<{clearcachecrontask}prestashop>clearcachecrontask_d6f0e2961641d851cb4d1f1a0b38e276'] = 'Block Layered Full Prices Index';
+$_MODULE ['<{clearcachecrontask}prestashop>clearcachecrontask_b073e9fa72fdbef2b2c93724e1f8ea56'] = 'Faceted Search full price index';
+$_MODULE ['<{clearcachecrontask}prestashop>clearcachecrontask_fc51172c02456ea59d0c7feb6961856d'] = 'Done!';
+$_MODULE ['<{clearcachecrontask}prestashop>support_db5eb84117d06047c97c9a0191b5fffe'] = 'Support';
+$_MODULE ['<{clearcachecrontask}prestashop>support_8b378b32651e8ddb6f19a9cb8dad9456'] = 'Wenn Sie Fragen oder Fehlerberichte oder Vorschläge zur Verbesserung meines Moduls haben, wenden Sie sich an mich:';
+$_MODULE ['<{clearcachecrontask}prestashop>support_bebb41e5e32c868f1eb0e4439a2d3ee9'] = 'Ich werde mein Bestes tun, um Ihnen bei Ihrem Modul zu helfen.';
+$_MODULE ['<{clearcachecrontask}prestashop>support_a54c7aca1ea696b1c162c7f5b67313b3'] = 'Wenn Sie dieses Modul für nützlich befunden haben, hinterlassen Sie bitte eine Bewertung für Prestashop Addons :)';
+$_MODULE ['<{clearcachecrontask}prestashop>configure_db9a75d46c37ed60dc12512da39ae499'] = 'Cache-Cron-Task löschen geplant';
+$_MODULE ['<{clearcachecrontask}prestashop>configure_9e7ed9e232072cfb4e07733dad9af2b3'] = 'Verwendung?';
+$_MODULE ['<{clearcachecrontask}prestashop>configure_cd946818af0333f16cf16cb9be16b73d'] = 'Sie müssen nur Ihren Cron-Task-Manager (Prestashop-Plugin wie \ "Cron-Task-Manager \" oder direkt in Ihrer Serverkonfiguration) einrichten, um die folgende URL aufzurufen die Häufigkeit Ihrer Wahl: ';
