@@ -1,28 +1,28 @@
 <?php
 /**
-* 2007-2020 PrestaShop
-*
-* NOTICE OF LICENSE
-*
-* This source file is subject to the Academic Free License (AFL 3.0)
-* that is bundled with this package in the file LICENSE.txt.
-* It is also available through the world-wide-web at this URL:
-* http://opensource.org/licenses/afl-3.0.php
-* If you did not receive a copy of the license and are unable to
-* obtain it through the world-wide-web, please send an email
-* to license@prestashop.com so we can send you a copy immediately.
-*
-* DISCLAIMER
-*
-* Do not edit or add to this file if you wish to upgrade PrestaShop to newer
-* versions in the future. If you wish to customize PrestaShop for your
-* needs please refer to http://www.prestashop.com for more information.
-*
-*  @author    PrestaShop SA <contact@prestashop.com>
-*  @copyright 2007-2020 PrestaShop SA
-*  @license   http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
-*  International Registered Trademark & Property of PrestaShop SA
-*/
+ * 2007-2021 PrestaShop
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@prestashop.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade PrestaShop to newer
+ * versions in the future. If you wish to customize PrestaShop for your
+ * needs please refer to http://www.prestashop.com for more information.
+ *
+ * @author    PrestaShop SA <contact@prestashop.com>
+ * @copyright 2007-2021 PrestaShop SA
+ * @license   http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ *  International Registered Trademark & Property of PrestaShop SA
+ */
 
 if (!defined('_PS_VERSION_')) {
     exit;
@@ -37,7 +37,7 @@ class Clearcachecrontask extends Module
     {
         $this->name = 'clearcachecrontask';
         $this->tab = 'administration';
-        $this->version = '1.1.4';
+        $this->version = '1.1.5';
         $this->author = 'Mathieu Thollet';
         $this->need_instance = 0;
         $this->bootstrap = true;
@@ -52,7 +52,7 @@ class Clearcachecrontask extends Module
 
     public function install()
     {
-        Configuration::updateGlobalValue('CLEARCACHECRONTASK_TOKEN', uniqid().uniqid());
+        Configuration::updateGlobalValue('CLEARCACHECRONTASK_TOKEN', uniqid() . uniqid());
         Configuration::updateGlobalValue('CLEARCACHECRONTASK_FACETED', false);
         Configuration::updateGlobalValue('CLEARCACHECRONTASK_FACETED_PRICES', false);
         return parent::install();
@@ -77,13 +77,13 @@ class Clearcachecrontask extends Module
             $output = $this->displayConfirmation($this->l('Settings have been updated.'));
         }
         $this->context->smarty->assign('module_dir', $this->_path);
-        $this->context->smarty->assign('url', Tools::getProtocol(Tools::usingSecureMode()).$_SERVER['HTTP_HOST'].$this->getPathUri() . 'cron.php');
+        $this->context->smarty->assign('url', Tools::getProtocol(Tools::usingSecureMode()) . $_SERVER['HTTP_HOST'] . $this->getPathUri() . 'cron.php');
         $this->context->smarty->assign('token', Configuration::get('CLEARCACHECRONTASK_TOKEN'));
         $this->context->smarty->assign('support_url', $this->support_url);
         return $output .
-            $this->context->smarty->fetch($this->local_path.'views/templates/admin/configure.tpl') .
+            $this->context->smarty->fetch($this->local_path . 'views/templates/admin/configure.tpl') .
             $this->renderForm() .
-            $this->context->smarty->fetch($this->local_path.'views/templates/admin/support.tpl');
+            $this->context->smarty->fetch($this->local_path . 'views/templates/admin/support.tpl');
     }
 
 
@@ -102,7 +102,7 @@ class Clearcachecrontask extends Module
         $helper->identifier = $this->identifier;
         $helper->submit_action = 'submitClearCacheCronTaskModule';
         $helper->currentIndex = $this->context->link->getAdminLink('AdminModules', false)
-            .'&configure='.$this->name.'&tab_module='.$this->tab.'&module_name='.$this->name;
+            . '&configure=' . $this->name . '&tab_module=' . $this->tab . '&module_name=' . $this->name;
         $helper->token = Tools::getAdminTokenLite('AdminModules');
 
         $helper->tpl_vars = array('fields_value' => $this->getConfigFormValues());
@@ -218,11 +218,33 @@ class Clearcachecrontask extends Module
         Tools::clearXMLCache();
         echo $echo ? '<br/>' . $this->l('Clear Media Cache') : '';
         Media::clearCache();
+        if (version_compare(_PS_VERSION_, '1.7', '<')) {
+            $cacheSubDirs = ['smarty/cache', 'smarty/compile'];
+            foreach ($cacheSubDirs as $dir) {
+                echo $echo ? '<br/>' . $this->l('Delete directory content') . ' : ' . _PS_CACHE_DIR_ . $dir . '/' : '';
+                Tools::deleteDirectory(_PS_CACHE_DIR_ . $dir . '/', false);
+            }
+        }
+        if (_PS_CACHE_ENABLED_) {
+            switch (_PS_CACHING_SYSTEM_) {
+                case 'CacheFs':
+                    echo $echo ? '<br/>' . $this->l('Delete Cache FS Directory') : '';
+                    CacheFs::deleteCacheDirectory();
+                    break;
+                case 'CacheMemcache':
+                    echo $echo ? '<br/>' . $this->l('Flush CacheMemcache') : '';
+                    Cache::getInstance()->flush();
+                    break;
+                case 'CacheMemcached':
+                    echo $echo ? '<br/>' . $this->l('Flush CacheMemcached') : '';
+                    break;
+            }
+        }
         echo $echo ? '<br/>' . $this->l('Generate Index') : '';
         Tools::generateIndex();
         if (Configuration::get('CLEARCACHECRONTASK_FACETED', false)) {
             if (Module::isInstalled('blocklayered')) {
-                include_once(dirname(__FILE__).'/../blocklayered/blocklayered.php');
+                include_once(dirname(__FILE__) . '/../blocklayered/blocklayered.php');
                 echo $echo ? '<br/>' . $this->l('Block Layered attributes index') : '';
                 $blockLayered = new BlockLayered();
                 $blockLayered->indexAttribute();
@@ -230,7 +252,7 @@ class Clearcachecrontask extends Module
                 $blockLayered->indexUrl();
             }
             if (Module::isInstalled('ps_facetedsearch')) {
-                include_once(dirname(__FILE__).'/../ps_facetedsearch/ps_facetedsearch.php');
+                include_once(dirname(__FILE__) . '/../ps_facetedsearch/ps_facetedsearch.php');
                 echo $echo ? '<br/>' . $this->l('Faceted Search attributes index') : '';
                 $psFacetedsearch = new Ps_Facetedsearch();
                 $psFacetedsearch->indexAttribute();
@@ -238,12 +260,12 @@ class Clearcachecrontask extends Module
         }
         if (Configuration::get('CLEARCACHECRONTASK_FACETED_PRICES', false)) {
             if (Module::isInstalled('blocklayered')) {
-                include_once(dirname(__FILE__).'/../blocklayered/blocklayered.php');
+                include_once(dirname(__FILE__) . '/../blocklayered/blocklayered.php');
                 echo $echo ? '<br/>' . $this->l('Block Layered full prices index') : '';
                 BlockLayered::fullPricesIndexProcess();
             }
             if (Module::isInstalled('ps_facetedsearch')) {
-                include_once(dirname(__FILE__).'/../ps_facetedsearch/ps_facetedsearch.php');
+                include_once(dirname(__FILE__) . '/../ps_facetedsearch/ps_facetedsearch.php');
                 echo $echo ? '<br/>' . $this->l('Faceted Search full prices index') : '';
                 Ps_Facetedsearch::fullPricesIndexProcess();
             }
