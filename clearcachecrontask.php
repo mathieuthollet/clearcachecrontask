@@ -37,8 +37,8 @@ class Clearcachecrontask extends Module
     {
         $this->name = 'clearcachecrontask';
         $this->tab = 'administration';
-        $this->version = '1.1.5';
-        $this->author = 'Mathieu Thollet';
+        $this->version = '1.1.6';
+        $this->author = 'AWebVision';
         $this->need_instance = 0;
         $this->bootstrap = true;
         $this->module_key = '20e60c84c41e49d96da3417f5393fe93';
