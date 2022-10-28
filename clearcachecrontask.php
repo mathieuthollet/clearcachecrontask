@@ -37,7 +37,7 @@ class Clearcachecrontask extends Module
     {
         $this->name = 'clearcachecrontask';
         $this->tab = 'administration';
-        $this->version = '1.1.6';
+        $this->version = '1.1.7';
         $this->author = 'AWebVision';
         $this->need_instance = 0;
         $this->bootstrap = true;
